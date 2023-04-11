@@ -16,18 +16,18 @@ npm install youdaojs
 - TypeScript
 
     ```typescript
-    import YouDaoFanYi from 'YouDaoFanYi'
-    const fanyi = new YouDaoFanYi()
+    import YouDaoJS from './main'
     ```
 - JavaScript
 
     ```javascript
-    const fanyi = new require('YouDaoFanYi').default
+    const YoudaoJS = require("./main").default
     ```
 
 ## 使用
 
 ```javascript
+const fanyi = new YoudaoJS()
 fanyi.getResult('你好').then(data => {
     console.log(data)
 })

@@ -6,9 +6,9 @@ import axios from 'axios'
  * @author 欧阳鹏
  * @date 2023-04-11
  */
-export default class YouDaoFanYi {
+export default class YouDaoJS {
     /**
-     * 
+     * 获取翻译结果
      * @param str 代翻译文本
      * @param from 来源语言，`LangInfo.youdaoLang` 的下标
      * @param to 目标语言下标，`LangInfo.youdaoLang` 的下标
@@ -50,7 +50,7 @@ export default class YouDaoFanYi {
      * 解密字符串
      * @param data 待解密字符串
      */
-    public decode(data: string) {
+    private decode(data: string) {
         const key = createHash('md5').update('ydsecret://query/key/B*RGygVywfNBwpmBaZg*WT7SIOUP2T0C9WHMZN39j^DAdaZhAnxvGcCY6VYFwnHl').digest()
         const iv = createHash('md5').update('ydsecret://query/iv/C@lZe2YzHtZ2CYgaXKSVfsb7Y4QWHjITPPZ0nQp87fBeJ!Iv6v^6fvi2WN@bYpJ4').digest()
         const decipher = createDecipheriv('aes-128-cbc', key, iv)
@@ -59,7 +59,7 @@ export default class YouDaoFanYi {
         return decrypted
     }
 
-    public getSign(timestamp: number): string {
+    private getSign(timestamp: number): string {
         let str = `client=fanyideskweb&mysticTime=${timestamp}&product=webfanyi&key=fsdsogkndfokasodnaso`
         return createHash('md5').update(str).digest('hex')
     }

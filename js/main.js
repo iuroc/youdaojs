@@ -43,16 +43,16 @@ var axios_1 = require("axios");
  * @author 欧阳鹏
  * @date 2023-04-11
  */
-var YouDaoFanYi = /** @class */ (function () {
-    function YouDaoFanYi() {
+var YouDaoJS = /** @class */ (function () {
+    function YouDaoJS() {
     }
     /**
-     *
+     * 获取翻译结果
      * @param str 代翻译文本
      * @param from 来源语言，`LangInfo.youdaoLang` 的下标
      * @param to 目标语言下标，`LangInfo.youdaoLang` 的下标
      */
-    YouDaoFanYi.prototype.getResult = function (str, from, to) {
+    YouDaoJS.prototype.getResult = function (str, from, to) {
         if (from === void 0) { from = 0; }
         if (to === void 0) { to = 0; }
         return __awaiter(this, void 0, void 0, function () {
@@ -101,7 +101,7 @@ var YouDaoFanYi = /** @class */ (function () {
      * 解密字符串
      * @param data 待解密字符串
      */
-    YouDaoFanYi.prototype.decode = function (data) {
+    YouDaoJS.prototype.decode = function (data) {
         var key = (0, crypto_1.createHash)('md5').update('ydsecret://query/key/B*RGygVywfNBwpmBaZg*WT7SIOUP2T0C9WHMZN39j^DAdaZhAnxvGcCY6VYFwnHl').digest();
         var iv = (0, crypto_1.createHash)('md5').update('ydsecret://query/iv/C@lZe2YzHtZ2CYgaXKSVfsb7Y4QWHjITPPZ0nQp87fBeJ!Iv6v^6fvi2WN@bYpJ4').digest();
         var decipher = (0, crypto_1.createDecipheriv)('aes-128-cbc', key, iv);
@@ -109,13 +109,13 @@ var YouDaoFanYi = /** @class */ (function () {
         decrypted += decipher.final('utf8');
         return decrypted;
     };
-    YouDaoFanYi.prototype.getSign = function (timestamp) {
+    YouDaoJS.prototype.getSign = function (timestamp) {
         var str = "client=fanyideskweb&mysticTime=".concat(timestamp, "&product=webfanyi&key=fsdsogkndfokasodnaso");
         return (0, crypto_1.createHash)('md5').update(str).digest('hex');
     };
-    return YouDaoFanYi;
+    return YouDaoJS;
 }());
-exports.default = YouDaoFanYi;
+exports.default = YouDaoJS;
 /** 语言信息 */
 var LangInfo = /** @class */ (function () {
     function LangInfo() {
