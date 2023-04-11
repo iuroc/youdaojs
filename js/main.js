@@ -48,7 +48,7 @@ var YouDaoJS = /** @class */ (function () {
     }
     /**
      * 获取翻译结果
-     * @param str 代翻译文本
+     * @param str 待翻译文本
      * @param from 来源语言，`LangInfo.youdaoLang` 的下标
      * @param to 目标语言下标，`LangInfo.youdaoLang` 的下标
      */
@@ -63,7 +63,7 @@ var YouDaoJS = /** @class */ (function () {
                     case 0:
                         timestamp = new Date().getTime();
                         data = {
-                            i: '你好',
+                            i: str,
                             from: LangInfo.youdaoLang[from],
                             to: LangInfo.youdaoLang[to],
                             dictResult: true,
