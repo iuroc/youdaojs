@@ -8,7 +8,7 @@
   "main": "js/main.js",
   "types": "src/main.ts",
   "name": "youdaojs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [],
   "author": "欧阳鹏",
   "license": "ISC",

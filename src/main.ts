@@ -16,7 +16,7 @@ export default class YouDaoJS {
     public async getResult(str: string, from: number = 0, to: number = 0) {
         let timestamp = new Date().getTime()
         const data = {
-            i: '你好',
+            i: str,
             from: LangInfo.youdaoLang[from],
             to: LangInfo.youdaoLang[to],
             dictResult: true,

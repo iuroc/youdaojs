@@ -21,13 +21,13 @@ npm install youdaojs
 - JavaScript
 
     ```javascript
-    const YoudaoJS = require("./main").default
+    const YouDaoJS = require("./main").default
     ```
 
 ## 使用
 
 ```javascript
-const fanyi = new YoudaoJS()
+const fanyi = new YouDaoJS()
 fanyi.getResult('你好').then(data => {
     console.log(data)
 })
