@@ -9,7 +9,7 @@ import axios from 'axios'
 export default class YouDaoJS {
     /**
      * 获取翻译结果
-     * @param str 代翻译文本
+     * @param str 待翻译文本
      * @param from 来源语言，`LangInfo.youdaoLang` 的下标
      * @param to 目标语言下标，`LangInfo.youdaoLang` 的下标
      */
